@@ -1,21 +1,11 @@
-import { Inter } from 'next/font/google'
 import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className={`${inter.className} ${styles.container}`}>
+    <div className={styles.container}>
       {/* Navigation */}
       <nav className={styles.nav}>
         <div className={styles.navContainer}>
-          <div>
-            <img 
-              src="/images/logo.png" 
-              alt="National Fashionista League" 
-              className={styles.logo}
-            />
-          </div>
           <ul className={styles.navLinks}>
             <li><a href="#" className={styles.navLink}>Home</a></li>
             <li><a href="#" className={styles.navLink}>Latest Fits</a></li>
@@ -25,35 +15,40 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Image */}
+      {/* Hero Section with Text Overlay */}
       <div 
-        className={styles.heroImage}
+        className={styles.heroSection}
         style={{
           backgroundImage: "url('/images/hero.jpg')"
         }}
-      />
-
-      {/* Main Content */}
-      <div className={styles.mainContent}>
-        <p className={styles.siteDescription}>
-          Grid Iron fashion that you don't need to iron
-        </p>
-
-        {/* Three Action Buttons */}
-        <div className={styles.actionButtons}>
-          <a href="#" className={`${styles.btn} ${styles.btnLatestFits}`}>
-            Latest Fits
-          </a>
-          <a href="#" className={styles.btn}>
-            NFL Teams
-          </a>
-          <a href="#" className={`${styles.btn} ${styles.btnUniformHistory}`}>
-            Uniform History
-          </a>
+      >
+        <div className={styles.heroOverlay}>
+          <h1 className={styles.heroTitle}>National Fashionista League</h1>
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Site Description on Blue Background */}
+      <p className={styles.siteDescription}>
+        Grid Iron fashion that you don't need to iron
+      </p>
+
+      {/* Three Action Buttons on Blue Background */}
+      <div className={styles.actionButtons}>
+        <a href="#" className={`${styles.btn} ${styles.btnLatestFits}`}>
+          <div className={styles.btnIcon}>🏈</div>
+          <span>Latest Fits</span>
+        </a>
+        <a href="#" className={styles.btn}>
+          <div className={styles.btnIcon}>⭐</div>
+          <span>NFL Teams</span>
+        </a>
+        <a href="#" className={`${styles.btn} ${styles.btnUniformHistory}`}>
+          <div className={styles.btnIcon}>👕</div>
+          <span>Uniform History</span>
+        </a>
+      </div>
+
+      {/* Footer on Blue Background */}
       <footer className={styles.footer}>
         <h3 className={styles.footerTitle}>
           National Fashionista League
